@@ -1,86 +1,103 @@
-\# Windows SOC Home Lab
+# Windows & Linux SOC Home Lab
 
+## Overview
 
+A personal SOC home lab built to practice security monitoring,
+detection engineering, incident investigation, and threat hunting.
 
-\## Overview
+The lab simulates a small enterprise environment using Windows,
+Linux, a web server, an attacker machine, and a centralized
+Wazuh SIEM.
 
+## Lab Architecture
 
+### Kali Linux
 
-A personal SOC lab for learning security monitoring,
+Role: Attacker / Security Testing Machine
 
-log analysis, detection engineering, and incident investigation.
+Used to simulate security activity against the monitored
+Windows and Linux environments.
 
+### Windows 10
 
+Role: Windows Endpoint
 
-\## Technologies
+Components:
 
+- Sysmon
+- Wazuh Agent
+- Windows Security Event Logs
 
+Used to monitor authentication events, process creation,
+PowerShell activity, and other Windows security events.
 
-\- Wazuh
+### Ubuntu Linux
 
-\- Sysmon
+Role: Linux Endpoint and Web Server
 
-\- Windows Event Logs
+Components:
 
-\- MITRE ATT\&CK
+- Nginx
+- Wazuh Agent
+- Linux system logs
+- Web server access logs
 
-\- PowerShell
+Used to monitor Linux activity and web server traffic.
 
-\- Python
+### Ubuntu Server
 
+Role: Wazuh SIEM Server
 
+Components:
 
-\## Lab Architecture
+- Wazuh Manager
+- Wazuh Indexer
+- Wazuh Dashboard
 
+Used to collect, analyze, store, and visualize security
+events from the monitored endpoints.
 
+## Detection Scenarios
 
-Windows 10
+- Windows Brute Force
+- PowerShell Activity
+- Suspicious Process Creation
+- Linux SSH Brute Force
+- Web Server Errors
+- Suspicious Web Requests
+- Web Directory Discovery
 
-→ Sysmon
+## Investigation
 
-→ Wazuh Agent
+Security alerts will be investigated using:
 
-→ Wazuh Manager
+- Windows Event Logs
+- Sysmon
+- Linux Logs
+- Web Server Logs
+- Source IP
+- Username
+- Process Information
+- Command Line
+- Network Activity
 
-→ Wazuh Dashboard
+## MITRE ATT&CK
 
+Relevant detections will be mapped to MITRE ATT&CK techniques.
 
+## Project Structure
 
-\## Detection Scenarios
+- `architecture/` — SOC lab architecture documentation
+- `detections/` — Detection rules and detection analysis
+- `investigations/` — Incident investigation reports
+- `screenshots/` — Evidence and screenshots
+- `README.md` — Project overview
 
+## Goals
 
-
-\- Brute Force Detection
-
-\- PowerShell Activity
-
-\- Process Creation
-
-\- Web Attack Detection
-
-
-
-\## Investigation
-
-
-
-Each security alert will be investigated by analyzing:
-
-
-
-\- Timestamp
-
-\- Host
-
-\- User
-
-\- Process
-
-\- Source IP
-
-\- Command Line
-
-\- Network Activity
-
-\- MITRE ATT\&CK Technique
-
+- Build practical SOC Analyst skills
+- Learn SIEM monitoring
+- Practice detection engineering
+- Perform security investigations
+- Develop threat hunting skills
+- Build a practical cybersecurity portfolio
