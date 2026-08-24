@@ -1,96 +1,86 @@
-# \# Windows SOC Home Lab
+\# Windows SOC Home Lab
 
-# 
 
-# \## Overview
 
-# 
+\## Overview
 
-# A personal SOC lab for learning security monitoring,
 
-# log analysis, detection engineering, and incident investigation.
 
-# 
+A personal SOC lab for learning security monitoring,
 
-# \## Technologies
+log analysis, detection engineering, and incident investigation.
 
-# 
 
-# \- Wazuh
 
-# \- Sysmon
+\## Technologies
 
-# \- Windows Event Logs
 
-# \- MITRE ATT\&CK
 
-# \- PowerShell
+\- Wazuh
 
-# \- Python
+\- Sysmon
 
-# 
+\- Windows Event Logs
 
-# \## Lab Architecture
+\- MITRE ATT\&CK
 
-# 
+\- PowerShell
 
-# Windows 10
+\- Python
 
-# → Sysmon
 
-# → Wazuh Agent
 
-# → Wazuh Manager
+\## Lab Architecture
 
-# → Wazuh Dashboard
 
-# 
 
-# \## Detection Scenarios
+Windows 10
 
-# 
+→ Sysmon
 
-# \- Brute Force Detection
+→ Wazuh Agent
 
-# \- PowerShell Activity
+→ Wazuh Manager
 
-# \- Process Creation
+→ Wazuh Dashboard
 
-# \- Web Attack Detection
 
-# 
 
-# \## Investigation
+\## Detection Scenarios
 
-# 
 
-# Each security alert will be investigated by analyzing:
 
-# 
+\- Brute Force Detection
 
-# \- Timestamp
+\- PowerShell Activity
 
-# \- Host
+\- Process Creation
 
-# \- User
+\- Web Attack Detection
 
-# \- Process
 
-# \- Source IP
 
-# \- Command Line
+\## Investigation
 
-# \- Network Activity
 
-# \- MITRE ATT\&CK Technique
 
-# 
+Each security alert will be investigated by analyzing:
 
-# \## Goal
 
-# 
 
-# Build practical SOC Analyst skills through hands-on
+\- Timestamp
 
-# security monitoring and incident investigation.
+\- Host
+
+\- User
+
+\- Process
+
+\- Source IP
+
+\- Command Line
+
+\- Network Activity
+
+\- MITRE ATT\&CK Technique
 
