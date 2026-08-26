@@ -1,42 +1,67 @@
-\# Windows 10 Endpoint Setup
+# Windows Setup
 
+## Overview
 
+Windows 10 is the main Windows endpoint in my SOC lab.
 
-\## Overview
+I use it to test Windows logs, Sysmon events and Wazuh alerts.
 
+## System Information
 
+* OS: Windows 10
+* Hostname: Win10Lab
+* Role: Endpoint
+* IP: 192.168.50.20
+* Network: 192.168.50.0/24
+* Wazuh Agent: Installed
+* Sysmon: Installed
 
-Windows 10 is used as the monitored endpoint in the SOC lab.
+## Network
 
+Windows 10: 192.168.50.20
 
+Subnet: 255.255.255.0
 
-The endpoint runs the Wazuh Agent and Sysmon to provide security
+Wazuh Server: 192.168.50.10
 
-telemetry to the Wazuh Server.
+My SOC lab uses: 192.168.50.0/24
 
+## Wazuh Agent
 
+The Wazuh Agent is installed on this machine.
 
-\## System Information
+Check the Agent service with:
 
+Get-Service WazuhSvc
 
+The service should be running before sending logs to the Wazuh Manager.
 
-OS:Windows 10
+## Sysmon
 
-Hostname: Win10Lab
+I installed Sysmon to collect more detailed information about Windows activity.
 
-SOC IP: 192.168.50.20
+Some useful events include:
 
-Wazuh Agent: Installed
+* Process creation
+* Network connections
+* File activity
+* Registry activity
+* Process relationships
 
-Sysmon: Installed 
+## Sysmon Logs
 
+Sysmon events can be viewed in:
 
+Event Viewer → Applications and Services Logs → Microsoft → Windows → Sysmon → Operational
 
-\## Network
+## Wazuh Configuration
 
+The Wazuh Agent sends data to the Wazuh Manager.
 
+Wazuh Manager: 192.168.50.10
 
-SOC network:
+Windows endpoint: 192.168.50.20
 
-192.168.50.0/24
+## Purpose
 
+I will use this machine to test Windows-related detections and investigate events in Wazuh.
