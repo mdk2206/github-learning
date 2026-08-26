@@ -41,25 +41,12 @@ The Wazuh server has these main components:
 
 ## Network
 
-My SOC lab uses:
+My SOC lab uses: 192.168.50.0/24
 
-192.168.50.0/24
-
-Wazuh Server:
-
-192.168.50.10
-
-Windows 10:
-
-192.168.50.20
-
-Ubuntu Web:
-
-192.168.50.30
-
-Kali:
-
-192.168.50.40
+Wazuh Server: 192.168.50.10
+Windows 10: 192.168.50.20
+Ubuntu Web: 192.168.50.30
+Kali: 192.168.50.40
 
 ## Check Wazuh Services
 
