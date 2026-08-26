@@ -1,30 +1,53 @@
-\# Sysmon Setup
+# Sysmon Setup
 
+## Overview
 
+I installed Sysmon on the Windows 10 machine to get more detailed Windows event information.
 
-\## Overview
+The Windows machine is:
 
+* Hostname: Win10Lab
+* IP: 192.168.50.20
 
+The Wazuh Manager is:
 
-Sysmon (System Monitor) is installed on the Windows 10 endpoint to
+192.168.50.10
 
-provide detailed telemetry about system activity.
+## Installation
 
+Sysmon is installed on the Windows 10 endpoint.
 
+After installation, Sysmon runs as a Windows service and writes events to the Sysmon Operational log.
 
-Sysmon events are monitored through Wazuh.
+## Event Log
 
+I can view Sysmon events from:
 
+Event Viewer → Applications and Services Logs → Microsoft → Windows → Sysmon → Operational
 
-\## Installation
+## Events
 
+Sysmon can provide information about things such as:
 
+* Process creation
+* Process termination
+* Network connections
+* File activity
+* Registry activity
+* Parent-child processes
 
-Sysmon is installed on:
+## Wazuh
 
+The Wazuh Agent is also installed on the same Windows machine.
 
+The basic flow is:
 
-Win10Lab
+Windows activity → Sysmon → Windows Event Log → Wazuh Agent → Wazuh Manager
 
-192.168.50.20
+Wazuh Manager: 192.168.50.10
 
+Windows: 192.168.50.20
+
+## Purpose
+
+I will use Sysmon events together with Wazuh to investigate suspicious Windows activity.
